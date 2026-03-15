@@ -2,9 +2,26 @@
 
 [English](./README.md) | [简体中文](./README.zh-CN.md)
 
-Install Discord DM voice input for an existing OpenClaw home with local `faster-whisper` transcription.
+![Local STT](https://img.shields.io/badge/local-STT-2da44e?style=flat-square)
+![No Paid API](https://img.shields.io/badge/no%20paid-API-0969da?style=flat-square)
+![skill-vetter reviewed](https://img.shields.io/badge/skill--vetter-reviewed-8250df?style=flat-square)
+![quick validate passed](https://img.shields.io/badge/quick__validate-passed-1a7f37?style=flat-square)
+![install smoke tested](https://img.shields.io/badge/install-smoke--tested-f0883e?style=flat-square)
+
+Turn Discord voice notes into live OpenClaw input in minutes, with local `faster-whisper` transcription and no paid speech API in the loop.
 
 This repository is also a valid OpenClaw skill repository. The skill entrypoint is [`SKILL.md`](./SKILL.md), and the repository root is the skill root.
+
+## Why This Skill
+
+If you want a lighter voice workflow than "join a voice channel and stream audio", this skill takes the pragmatic route:
+
+- DM the bot a Discord voice message
+- Transcribe it locally
+- Feed the transcript into OpenClaw
+- Get the reply back in the same chat
+
+The result is simple, cheap, and much easier to keep running.
 
 ## What It Does
 
@@ -14,6 +31,14 @@ This repository is also a valid OpenClaw skill repository. The skill entrypoint 
 - Deploys a macOS `launchd` service for the voice bridge
 - Adds `oc-voice-*` shell aliases for lifecycle management
 - Disables OpenClaw's native audio attachment preflight to avoid racing the bridge
+
+## Trust Signals
+
+- `skill-vetter reviewed`: checked for obvious red flags, unnecessary scope, and suspicious install behavior
+- `quick_validate passed`: the skill structure validates cleanly as an OpenClaw skill
+- `install smoke-tested`: the installer was exercised against a temporary OpenClaw home and verified to render files, patch config, and generate the launchd setup correctly
+
+These badges mean the repository was reviewed and smoke-tested. They do not mean "official OpenClaw distribution" or "universally safe on every machine".
 
 ## Repository Layout
 
@@ -55,3 +80,4 @@ Then send a fresh voice message to the bot in a Discord DM.
 - Target platform: macOS with `launchd`
 - Scope: Discord DM voice messages only
 - Assumption: Discord is already configured in `~/.openclaw/openclaw.json`
+- Positioning: community skill, not an official OpenClaw release
