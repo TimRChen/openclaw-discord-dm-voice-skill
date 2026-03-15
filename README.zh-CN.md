@@ -8,20 +8,24 @@
 ![quick_validate 通过](https://img.shields.io/badge/quick__validate-passed-1a7f37?style=flat-square)
 ![安装冒烟验证](https://img.shields.io/badge/install-smoke--tested-f0883e?style=flat-square)
 
-把 Discord 私聊语音消息接进 OpenClaw，使用本地 `faster-whisper` 转写，不依赖付费语音 API。
+这个 skill 就是为了解决一个很实际的问题：如果你平时通过 Discord 跟 OpenClaw 交互，老是打字很快就烦了。
+
+装上它之后，你只要在 Discord 私聊里给 bot 发语音，它会在本地用 `faster-whisper` 转成文字，再把文本交给 OpenClaw。
+
+常见的坑我已经提前踩过一轮了，这个仓库也做过 `skill-vetter` 审查、skill 结构校验和安装冒烟验证。
 
 这个仓库本身也是一个合法的 OpenClaw skill 仓库。[`SKILL.md`](./SKILL.md) 是 skill 入口文件，仓库根目录本身就是 skill 根目录。
 
 ## 为什么用这套
 
-如果你不想为了语音输入搭一整套实时音频链路，这个 skill 走的是更轻的一条路：
+如果你的目标很简单，就是“我想在 Discord 里跟 OpenClaw 说话，不想一直打字”，那这套就是更省事的做法：
 
 - 直接给 bot 发 Discord 私聊语音
 - 本地完成转写
 - 把文本交给 OpenClaw
 - 在同一个聊天里拿到回复
 
-安装更简单，运行成本更低，长期维护也更省心。
+不用折腾语音频道实时收流，也不用接付费语音 API，更不用把那些安装坑再踩一遍。
 
 ## 它会做什么
 

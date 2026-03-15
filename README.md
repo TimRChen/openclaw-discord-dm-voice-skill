@@ -8,20 +8,24 @@
 ![quick validate passed](https://img.shields.io/badge/quick__validate-passed-1a7f37?style=flat-square)
 ![install smoke tested](https://img.shields.io/badge/install-smoke--tested-f0883e?style=flat-square)
 
-Add voice input to OpenClaw through Discord DMs, using local `faster-whisper` transcription and no paid speech API.
+Built for one very practical reason: if you use OpenClaw through Discord, typing every prompt gets old fast.
+
+This skill fixes that. Send the bot a voice message in Discord DM, transcribe it locally with `faster-whisper`, and pass the transcript straight into OpenClaw.
+
+Most of the annoying setup pitfalls have already been worked through, and the repository has been reviewed with `skill-vetter`, validated as a proper skill, and smoke-tested against a temporary OpenClaw home.
 
 This repository is also a valid OpenClaw skill repository. [`SKILL.md`](./SKILL.md) is the skill entrypoint, and the repository root is the skill root.
 
 ## Why This Skill
 
-If you want voice input without building a full live-audio stack, this skill takes the simpler route:
+If your goal is simply "I want to talk to OpenClaw in Discord instead of typing all the time", this is the lightweight way to do it:
 
 - DM the bot a Discord voice message
 - Transcribe it locally
 - Feed the transcript into OpenClaw
 - Get the reply back in the same chat
 
-It is easier to install, cheaper to run, and much easier to keep stable over time.
+No voice channel plumbing. No paid speech API. No need to re-discover the same setup issues from scratch.
 
 ## What It Does
 
